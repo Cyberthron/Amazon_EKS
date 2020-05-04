@@ -13,6 +13,26 @@ Amazon EKS can be integrated with other Amazon service in order to provide scala
 <p>
 Amazon EKS helps run up-to-date version of the open-source Kubernetes software, thereby allowing the user to use all the existing plugins and tooling which is availability in the Kubernetes community. Applications that run on Amazon EKS are completely compatible with applications which run on other standard Kubernetes environment, be it running in on premise data centres or in public clouds. This indicates that the user can migrate to other standard Kubernetes application very easily without modifying any code.  </p>
 
+## Amazon_EKS Architecture
+
+<p align=center>
+  <img  src='./Images/eksarchitecture.png'  alt='Kubernetes Architecture'/>
+
+</p>
+
+* A highly available architecture that spans three Availability Zones.*
+
+* A VPC configured with public and private subnets according to AWS best practices, to provide you with your own virtual network on AWS.*
+
+* In the public subnets, managed NAT gateways to allow outbound internet access for resources in the private subnets.*
+
+* In one public subnet, a Linux bastion host in an Auto Scaling group to allow inbound Secure Shell (SSH) access to Amazon Elastic Compute Cloud (Amazon EC2) instances in private subnets. The bastion host is also configured with the Kubernetes kubectl command line interface (CLI) for managing the Kubernetes cluster.
+
+* An Amazon EKS cluster, which provides the Kubernetes control plane.
+
+* In the private subnets, a group of Kubernetes nodes.
+
+
 ## Working of Amazon EKS 
 
 <p align=center>
